@@ -1,0 +1,6 @@
+data <- read.table(pipe('findstr /B /R ^[1-2]/2/2007 household_power_consumption.txt'),header=F, sep=';')
+colnames(data) <-names(read.table('household_power_consumption.txt', header=TRUE,sep=";",nrows=1))
+windows()
+hist(data$Global_active_power, main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red")
+dev.copy(png, file = "plot1.png")
+dev.off()
