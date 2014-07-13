@@ -3,6 +3,7 @@ colnames(data) <-names(read.table('household_power_consumption.txt', header=TRUE
 x <- paste(data$Date, data$Time)
 dt<-strptime(x, "%d/%m/%Y %H:%M:%S")
 windows()
+par(bg = 'white')
 plot(dt,data$Sub_metering_1,type='n', xlab="", ylab="Energy sub metering")
 points(dt,data$Sub_metering_1,type='l',col="black")
 points(dt,data$Sub_metering_2,type='l',col="red")
